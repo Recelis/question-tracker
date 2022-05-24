@@ -1,6 +1,8 @@
 
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
+  <AppNavbar />
+  <AppLogin />
   <HelloWorld msg="Welcome to Your Vue.js App" />
   <AppScreen />
   <template v-for="city in cityList" v-bind:key="city._id">
@@ -12,6 +14,11 @@
 // https://www.smashingmagazine.com/2020/05/vue-survey-app-firebase-authentication-database/
 
 // Firebase security rules
+
+// https://www.freecodecamp.org/news/how-to-add-authentication-to-a-vue-app-using-firebase/
+// Firebase auth
+import AppNavbar from "./components/AppNavbar.vue";
+import AppLogin from "./components/AppLogin.vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import AppScreen from "./components/AppScreen.vue";
 import firebase from "./firebaseInit.js";
@@ -21,6 +28,8 @@ const db = getFirestore(firebase);
 export default {
   name: "App",
   components: {
+    AppNavbar,
+    AppLogin,
     HelloWorld,
     AppScreen,
   },
